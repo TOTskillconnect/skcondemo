@@ -93,7 +93,7 @@ export function FilterSidebar({
       <div>
         <h3 className="text-lg font-medium text-mauve-11 mb-4">Saved Searches</h3>
         <div className="space-y-2">
-          <Select onValueChange={onLoadSearch}>
+          <Select onChange={onLoadSearch}>
             <SelectTrigger>
               <SelectValue placeholder="Select a saved search" />
             </SelectTrigger>

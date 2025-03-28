@@ -27,7 +27,7 @@ export default function SearchWizardPage() {
       // Create initial data from the search parameters
       const prefillData: SearchWizardData = {
         basicCriteria: {
-          roleTitle: role || '',
+          roleTitle: role ? [role] : [],
           industry: '',
           experienceLevel: '',
           skills: [],
