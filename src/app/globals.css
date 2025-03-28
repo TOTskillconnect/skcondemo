@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Primary and secondary colors */
+  --color-primary: 74 85 104; /* #4A5568 - Deep indigo */
+  --color-secondary: 113 128 150; /* #718096 - Slate gray */
+  
+  /* Original accent colors - maintained for backward compatibility */
+  --color-accent-gold: 251 177 48; /* #fbb130 */
+  --color-accent-teal: 26 211 187; /* #1ad3bb */
+  
+  /* New accent colors */
+  --color-accent-blue: 56 178 172; /* #38B2AC - Soft blue-teal */
+  --color-accent-coral: 245 101 101; /* #F56565 - Soft coral */
+  --color-accent-green: 104 211 145; /* #68D391 - Muted sage green */
+  --color-accent-slate: 113 128 150; /* #718096 - Slate gray */
+  
+  /* Background and border colors */
+  --color-background: 247 250 252; /* #F7FAFC - Subtle off-white */
+  --color-content: 255 255 255; /* #FFFFFF - Pure white */
+  --color-border: 226 232 240; /* #E2E8F0 - Lighter border */
+}
+
+body {
+  @apply antialiased;
+} 
