@@ -1,6 +1,8 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+export const dynamic = 'force-dynamic';
+
+import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -21,7 +23,7 @@ interface Candidate {
   photoUrl?: string;
 }
 
-export default function CandidatePage() {
+function CandidateContent() {
   const [candidate, setCandidate] = useState<Candidate | null>(null);
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -160,5 +162,19 @@ export default function CandidatePage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function CandidatePage() {
+  return (
+    <Suspense fallback={
+      <div className="container mx-auto px-4 py-12">
+        <div className="bg-white rounded-lg shadow-md p-6 text-center">
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Loading...</h1>
+        </div>
+      </div>
+    }>
+      <CandidateContent />
+    </Suspense>
   );
 } 

@@ -70,7 +70,7 @@ const FORM_QUESTIONS: Question[] = [
     title: 'What role are you looking to fill?',
     description: 'The job title helps us match candidates with the right experience and skills. Specific roles like "Frontend Developer" or "Product Manager" work better than general terms.',
     required: true,
-    type: 'select',
+    type: 'tags',
     options: ROLE_TITLES,
     suggestions: ROLE_TITLES_TAGS
   },
@@ -873,7 +873,7 @@ export default function FormWizard({ initialData, onComplete, onDataChange }: Fo
           return (
             <InteractiveTagInput
               tags={roleTitleTag}
-              onTagsChange={(tags) => {
+              onTagsChange={(tags: Tag[]) => {
                 const selectedCategory = tags[0]?.category;
                 if (tags.length > 0 && !selectedCategory) {
                   toast.error('Invalid role selection');
